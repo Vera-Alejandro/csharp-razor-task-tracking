@@ -1,6 +1,19 @@
 ﻿@page
+@using Task = Tasker.Task
 @model Tasker.Pages.IndexModel
 @{
 }
 
 <h1>All Tasks</h1>
+
+<table>
+    @foreach (var task in Model.Tasks)
+    {
+        <tr>
+            <td>@task.Id</td>
+            <td>@task.Title</td>
+            <td>@task.Description</td>
+            <td>@task.Priority</td>
+        </tr>
+    }
+</table>
